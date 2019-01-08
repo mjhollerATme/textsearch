@@ -1,0 +1,271 @@
+Searching recursively for 'Lorem' in documents in ./testdata/ and storing in ./testdata/searches/Search "Lorem"
+–––––––––––––––––
+–––––––––––––––––
+./testdata//my-text-1.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//my-text-3.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//my-text-2.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//my-text-6.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//my-text-5.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//my-text-4.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//searches/Search "Lorem"/search.log:
+–––––––––––––––––
+1:Searching recursively for 'Lorem' in documents in ./testdata/ and storing in ./testdata/searches/Search "Lorem"
+6:1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+7:5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+8:9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+13:1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+14:5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+15:9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+20:1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+21:5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+22:9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+27:1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+28:5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+29:9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+34:1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+35:5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+36:9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+41:1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+42:5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+43:9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//searches/Search "Lorem"/my-text-1.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//searches/Search "Lorem"/my-text-3.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//searches/Search "Lorem"/my-text-2.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//searches/Search "Lorem"/my-text-6.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//searches/Search "Lorem"/my-text-5.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//searches/Search "Lorem"/my-text-4.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff/my-text-1.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff/my-text-3.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff/my-text-2.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff/my-text-6.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff/my-text-5.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff/my-text-4.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-dupl/my-text-1.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-dupl/my-text-3.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-dupl/my-text-2.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-dupl/my-text-6.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-dupl/my-text-5.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-dupl/my-text-4.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff2/my-text-1.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+7:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff2/my-text-3.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+7:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff2/my-text-2.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+7:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff2/my-text-6.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+7:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff2/my-text-5.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+7:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff2/my-text-4.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+5:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+7:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+9:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff3/my-text-1.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+2:  diam nonumy ei amet. Lorem ipsum
+4:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff3/my-text-3.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+2:  diam nonumy ei amet. Lorem ipsum
+4:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff3/my-text-2.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+2:  diam nonumy ei amet. Lorem ipsum
+4:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff3/my-text-6.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+2:  diam nonumy ei amet. Lorem ipsum
+4:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff3/my-text-5.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+2:  diam nonumy ei amet. Lorem ipsum
+4:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––
+–––––––––––––––––
+./testdata//testdata-inner-diff3/my-text-4.txt:
+–––––––––––––––––
+1:Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+2:  diam nonumy ei amet. Lorem ipsum
+4:  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+––––––––

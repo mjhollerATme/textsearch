@@ -1,24 +1,5 @@
 #! /bin/bash
 
-yesOrNo(){
-
-  local yn="(y/n)"
-  local message=$1
-  local myvalue="false"
-
-  while [ "$myvalue" != "y" ] && [ "$myvalue" != "n" ]
-  do
-    read -p "$message $yn" myvalue
-    if [ "$myvalue" != "y" ] && [ "$myvalue" != "n" ] && [ ! -z "$myvalue" ];then
-      echo "Please type 'y' (yes) or 'n' (no)">&2
-    elif [ -z "$myvalue" ]; then
-      myvalue="y"
-    fi
-  done
-
-  echo $myvalue
-
-}
 
 getFoldername(){
   local strMaxlength=16
@@ -48,88 +29,16 @@ createFolder(){
   echo "${storePath}"
 }
 
-promtDirSetting(){
 
-  local message=$1
-  local allowEmptyDir=${2:-"false"}
-  theDir="none"
-
-  while [ ! -d "$theDir" ]
-  do
-
-    enter="none"
-    read -p "$message" enter
-
-    if [ "$enter" != "none" ];then
-      dirPath=$(osascript -e 'tell application (path to frontmost application as text)
-      set myFolder to choose folder
-      POSIX path of myFolder
-      end' -so)
-
-      if [ -d "$dirPath" ];then
-        if [ ! -z "$(ls -pR "$dirPath" | grep -v /)" ];then
-          theDir="$dirPath"
-        elif [ "$allowEmptyDir" == "true" ];then
-          theDir="$dirPath"
-        else
-          theDir="none"
-          message="The directory is empty. Please choose another one"
-        fi
-      fi
-    fi
-
-  done
-
-  echo $theDir
-
-}
-
-# getDirSetting(){
-#
-#   local message=$1
-#   local allowEmptyDir=${2:-"false"}
-#   theDir="none"
-#
-#   while [ ! -d "$theDir" ]
-#   do
-#     read -e -p "$message" theDir
-#     if [ "$theDir" == "" ];then
-#       theDir=$(pwd)
-#     elif [ ! -d "$theDir" ];then
-#       echo "$theDir is not a directory"
-#     elif [ "$allowEmptyDir" == "false" -a -d "$theDir" -a -z "$(ls -A "$theDir")" ];then
-#       echo "The directory is empty"
-#       theDir="none"
-#     fi
-#   done
-#
-# }
-
-searchDir=$(promtDirSetting "Hit Enter to choose a Directory to search in" false)
-echo " "
-echo "  Directory to search in: $searchDir"
-echo " "
-
-storeDir=$(promtDirSetting "Hit Enter to choose a Directory to copy the results" true)
-echo " "
-echo "  Search results will be copied to: $storeDir"
-echo " "
-
-
-while [ ${#searchString} -lt 3 ]
-do
-  read -p "Enter a String to search for: " searchString
-  if [ ${#searchString} -lt 3 ];then
-    echo "Minimum 3 characters!"
-  fi
-done
-
-
-recursiveSearch=$(yesOrNo "Do you want to search recursively in $searchDir?")
-ignoreSearchDirectories=$(yesOrNo "Ignore Search directories?")
+searchDir="./testdata/"
+storeDir="./testdata/searches/"
+searchString="Lorem"
+recursiveSearch="y"
+ignoreSearchDirectories="n"
 
 foldername=$(getFoldername "$searchString")
 storePath=$(createFolder "$foldername")
+
 searchlogPath="${storePath}/search.log"
 touch "${searchlogPath}"
 
@@ -151,10 +60,8 @@ fi
 
 echo " "
 foundFiles=0
-duplicateDiffFiles=0
 duplicateFiles=0
-searchStartTime=$(date +%s)
-
+copiedFiles=0
 IFS=$'\n'
 for i in $searchPattern
 do
@@ -163,8 +70,6 @@ do
   if [ "$ignoreSearchDirectories" == "y" ] && [ -f "$i/search.log" ];then
     continue
   elif [ -z "$(ls -p "$i" | grep -v /)" ];then
-    continue
-  elif [ $storeDir -ef $i ];then #if this is the newly created folder for results
     continue
   else
     echo " "
@@ -185,6 +90,7 @@ do
       if [ ! -f "$existingFileCheck" ];then #if file with same name does not exist
         cp "$currFilePath" "$storePath" #2>/dev/null #copy file
         echo "File did not exist and was copied"
+        copiedFiles=$((copiedFiles + 1))
       elif [ -f "$existingFileCheck" ];then #if file exists
         n=1
         newFilePath="$existingFileCheck"
@@ -222,11 +128,10 @@ do
 
         if [ "$isDifferent" == "true" ];then
           cp -n "$currFilePath" "$newFilePath" #copy file
-          duplicateDiffFiles=$((duplicateDiffFiles + 1))
-          echo "Duplicate exists but is different"
-        else
           duplicateFiles=$((duplicateFiles + 1))
-          echo "Duplicate exists and is not different"
+          echo "File did exist but was different"
+        else
+          echo "File was not different"
         fi
 
       fi
@@ -244,42 +149,16 @@ do
   done
 done
 
-copiedFiles=$((foundFiles-duplicateFiles))
-searchEndTime=$(date +%s)
-runtime=$((searchEndTime-searchStartTime))
-runtimeSeconds=$(date -r $runtime '+%s')
-
-# runtimeFormatted=$(date -d @runtime '+%Y-%m-%d %H:%M:%S')
-# searchDateFormatted=$(date -d @searchStartTime '+%Y-%m-%d %H:%M:%S')
-
 echo " "
 echo "––––––––––––––––––––––––––––––––––"
 echo " "
-echo "Search Time: $(date -r "$searchEndTime")"
-echo "Runtime: $runtimeSeconds seconds"
-echo " "
-
 if [ $foundFiles -gt 0 ];then
-  echo "Found $foundFiles Files matching '$searchString'."
-  echo "$duplicateFiles of them were duplicates and were not copied."
-  echo "$duplicateDiffFiles of them were duplicates, but with different content."
-  echo "copied $copiedFiles files to:"
+  echo "Found $foundFiles Files matching '$searchString'. $duplicateFiles of them were duplicates, copied $copiedFiles files to:"
   echo "$storePath"
-
-  openSearchlog=$(yesOrNo "Open search results folder and search.log?")
-  if [ "$openSearchlog" == "y" ];then
-    open "$storePath"
-    open "$searchlogPath"
-  fi
-  echo " "
-  echo "––––––––––––––––––––––––––––––––––"
-  echo "You can find more details in search.log in the search results folder"
-  echo " "
 else
   echo "No Files found matching '$searchString'!"
   rm -r "$storePath"
-  echo " "
-  echo "––––––––––––––––––––––––––––––––––"
-  echo "Finished."
-  echo " "
 fi
+echo " "
+echo "––––––––––––––––––––––––––––––––––"
+echo "Done."
